@@ -23,6 +23,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':core')
+
     /*Android Support*/
     implementation AndroidSupport.v4
     implementation AndroidSupport.cardview
