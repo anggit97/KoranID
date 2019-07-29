@@ -1,11 +1,19 @@
 apply plugin: 'com.android.application'
 
-apply from: '../config-android.gradle'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Releases.targetSdkVersion
     defaultConfig {
         applicationId ApplicationId.id
+        minSdkVersion Releases.minSdkVersion
+        targetSdkVersion Releases.targetSdkVersion
+        versionCode Releases.versionCode
+        versionName Releases.versionName
         multiDexEnabled = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

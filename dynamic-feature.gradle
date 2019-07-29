@@ -1,3 +1,5 @@
+apply plugin: 'com.android.dynamic-feature'
+
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
@@ -18,4 +20,15 @@ android {
         release {}
         debug{}
     }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /*Dagger2*/
+    implementation Dagger.dagger
+    kapt Dagger.compiler
+    implementation Dagger.android
+    implementation Dagger.androidSupport
+    kapt Dagger.processor
 }
