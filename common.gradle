@@ -15,6 +15,7 @@ android {
         versionName Releases.versionName
         multiDexEnabled = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String","BASE_URL","\"https://anggitprayogo.com\""
     }
     buildTypes {
         release {}

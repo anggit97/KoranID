@@ -1,0 +1,20 @@
+apply from: "$rootDir/common.gradle"
+
+dependencies {
+    implementation project(':core')
+
+    /*Android Support*/
+    implementation AndroidSupport.v4
+    implementation AndroidSupport.cardview
+    implementation AndroidSupport.recyclerview
+    implementation AndroidSupport.design
+    implementation AndroidSupport.appCompat
+    implementation AndroidSupport.constraintLayout
+
+    /*Network*/
+    implementation Retrofit.retrofit
+    implementation Retrofit.gson
+    implementation Retrofit.gsonConverter
+    implementation Retrofit.okHttpLogging
+    implementation Retrofit.rxAdapter
+}
