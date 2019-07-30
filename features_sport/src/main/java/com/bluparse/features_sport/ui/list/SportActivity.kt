@@ -1,7 +1,8 @@
-package com.bluparse.features_sport
+package com.bluparse.features_sport.ui.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bluparse.features_sport.R
 
 class SportActivity : AppCompatActivity() {
 

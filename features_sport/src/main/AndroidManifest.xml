@@ -11,7 +11,7 @@
     </dist:module>
 
     <application>
-        <activity android:name=".SportActivity">
+        <activity android:name=".ui.list.SportActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

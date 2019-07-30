@@ -11,7 +11,7 @@ import com.bluparse.koranid.data.entity.TopHeadline
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-private const val SPORT_SAMPLE_CLASSNAME = "features_sport.SportActivity"
+private const val CLASS_SPORT = "com.bluparse.features_sport.ui.list.SportActivity"
 
 class MainActivity : BaseActivity(), MainContact.View {
 
@@ -27,7 +27,10 @@ class MainActivity : BaseActivity(), MainContact.View {
         presenter.getTopHeadline("id", "sports")
 
         tv_hello_world.setOnClickListener {
-            launchActivity(SPORT_SAMPLE_CLASSNAME)
+            Intent().setClassName(packageName, CLASS_SPORT)
+                .also {
+                    startActivity(it)
+                }
         }
     }
 
@@ -41,13 +44,6 @@ class MainActivity : BaseActivity(), MainContact.View {
 
     override fun showError(throwable: Throwable) {
         e("DATA ERROR: ", throwable.message)
-    }
-
-    /** Launch an activity by its class name. */
-    private fun launchActivity(className: String) {
-        val uri = Uri.parse("koranid://sport")
-        val intent = Intent(Intent.ACTION_VIEW, uri)
-        startActivity(intent)
     }
 
     override fun onDestroy() {
