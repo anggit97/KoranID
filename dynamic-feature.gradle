@@ -13,8 +13,9 @@ android {
         targetSdkVersion Releases.targetSdkVersion
         versionCode Releases.versionCode
         versionName Releases.versionName
-        multiDexEnabled = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String","BASE_URL","\"https://newsapi.org/v2/\""
+        buildConfigField "String","API_KEY","\"26fc30b1feeb42c780ab1cf64002f3f4\""
     }
     buildTypes {
         release {}

@@ -1,0 +1,10 @@
+apply from: "$rootDir/dynamic-feature.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':core')
+    implementation project(':network')
+    implementation project(':app')
+}
