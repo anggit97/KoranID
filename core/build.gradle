@@ -1,5 +1,11 @@
 apply from: "$rootDir/common.gradle"
 
+android{
+    defaultConfig{
+        buildConfigField "String","BASE_URL","\"https://newsapi.org/v2/\""
+    }
+}
+
 dependencies {
 
     implementation project(':network')

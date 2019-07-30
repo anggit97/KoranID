@@ -1,5 +1,11 @@
 package com.bluparse.koranid.di
 
+import com.bluparse.core.utils.rx.AppSchedulerProvider
+import com.bluparse.koranid.data.AppDataManager
+import com.bluparse.koranid.data.MainService
+import com.bluparse.koranid.data.remote.MainRemoteRepository
+import com.bluparse.koranid.data.remote.MainRemoteRepositoryImpl
+import com.bluparse.network.services
 import dagger.Module
 import dagger.Provides
 
@@ -11,5 +17,25 @@ class MainModule {
 
     @MainScope
     @Provides
-    fun provideInt() = 10
+    fun provideService(): MainService {
+        return services()
+    }
+
+    @MainScope
+    @Provides
+    fun provideMainRemoteRepository(mainService: MainService): MainRemoteRepository {
+        return MainRemoteRepositoryImpl(mainService)
+    }
+
+    @MainScope
+    @Provides
+    fun provideAppDataManager(mainRemoteRepository: MainRemoteRepository): AppDataManager {
+        return AppDataManager(mainRemoteRepository)
+    }
+
+    @MainScope
+    @Provides
+    fun provideAppScheduler(): AppSchedulerProvider{
+        return AppSchedulerProvider()
+    }
 }
