@@ -1,8 +1,6 @@
 apply from: "$rootDir/common.gradle"
 
 dependencies {
-    implementation project(':core')
-
     /*Android Support*/
     implementation AndroidSupport.v4
     implementation AndroidSupport.cardview
