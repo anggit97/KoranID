@@ -1,4 +1,4 @@
-package com.bluparse.features_sport.di
+package com.bluparse.features_sport.di.module
 
 import com.bluparse.core.utils.rx.AppSchedulerProvider
 import com.bluparse.core.utils.rx.SchedulerProvider
@@ -7,6 +7,7 @@ import com.bluparse.features_sport.data.DataManager
 import com.bluparse.features_sport.data.SportService
 import com.bluparse.features_sport.data.remote.SportRemoteRepository
 import com.bluparse.features_sport.data.remote.SportRemoteRepositoryImpl
+import com.bluparse.features_sport.di.SportScope
 import com.bluparse.network.services
 import dagger.Module
 import dagger.Provides

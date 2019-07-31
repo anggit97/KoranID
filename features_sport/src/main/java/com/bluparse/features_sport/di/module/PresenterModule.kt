@@ -1,7 +1,8 @@
-package com.bluparse.features_sport.di
+package com.bluparse.features_sport.di.module
 
 import com.bluparse.core.utils.rx.AppSchedulerProvider
 import com.bluparse.features_sport.data.AppDataManager
+import com.bluparse.features_sport.di.SportScope
 import com.bluparse.features_sport.ui.list.SportPresenter
 import dagger.Module
 import dagger.Provides

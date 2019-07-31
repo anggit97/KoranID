@@ -26,7 +26,7 @@ class MainActivity : BaseActivity(), MainContact.View {
 
         presenter.getTopHeadline("id", "sports")
 
-        tv_hello_world.setOnClickListener {
+        button.setOnClickListener {
             Intent().setClassName(packageName, CLASS_SPORT)
                 .also {
                     startActivity(it)

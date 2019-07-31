@@ -1,6 +1,9 @@
 package com.bluparse.features_sport.di
 
 import com.bluparse.core.di.CoreComponent
+import com.bluparse.features_sport.di.module.AdapterModule
+import com.bluparse.features_sport.di.module.DataModule
+import com.bluparse.features_sport.di.module.PresenterModule
 import com.bluparse.features_sport.ui.list.SportActivity
 import dagger.Component
 
@@ -11,7 +14,8 @@ import dagger.Component
 @Component(
     modules = [
         DataModule::class,
-        PresenterModule::class
+        PresenterModule::class,
+        AdapterModule::class
     ],
     dependencies = [
         CoreComponent::class
