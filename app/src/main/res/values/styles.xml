@@ -8,4 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppBarText">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="HeaderText">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="CellCategory">
+        <!--<item name="android:layout_marginTop">@dimen/dp_10</item>-->
+        <!--<item name="android:layout_marginStart">@dimen/dp_16</item>-->
+        <!--<item name="android:layout_marginEnd">@dimen/dp_14</item>-->
+        <item name="android:layout_width">@dimen/dp_100</item>
+        <item name="android:layout_height">@dimen/dp_100</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
 </resources>

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">KoranID</string>
     <string name="title_features_sport">Sport Module</string>
+    <string name="top_headline">Top Headline</string>
+    <string name="category">Kategori</string>
 </resources>
