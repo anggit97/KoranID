@@ -1,5 +1,7 @@
 package com.bluparse.core.di
 
+import com.bluparse.core.utils.rx.AppSchedulerProvider
+import com.bluparse.core.utils.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -10,9 +12,9 @@ import javax.inject.Singleton
 @Module
 class CoreModule {
 
-    @Singleton
+    @CoreScope
     @Provides
-    fun provideStringCore(): String {
-        return "Tester"
+    fun provideAppScheduler(): SchedulerProvider {
+        return AppSchedulerProvider()
     }
 }

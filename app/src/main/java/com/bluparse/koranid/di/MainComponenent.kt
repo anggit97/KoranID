@@ -18,7 +18,9 @@ import dagger.android.support.AndroidSupportInjectionModule
         MainModule::class,
         ActivityBindingModule::class
     ],
-    dependencies = [CoreComponent::class]
+    dependencies = [
+        CoreComponent::class
+    ]
 )
 interface MainComponenent : AndroidInjector<MainApplication> {
 

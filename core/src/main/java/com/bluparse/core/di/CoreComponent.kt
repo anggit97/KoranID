@@ -1,5 +1,6 @@
 package com.bluparse.core.di
 
+import com.bluparse.core.utils.rx.SchedulerProvider
 import dagger.Component
 import javax.inject.Singleton
 
@@ -14,5 +15,5 @@ import javax.inject.Singleton
 )
 interface CoreComponent {
 
-    fun getString(): String
+    fun AppSchedulerProvider(): SchedulerProvider
 }
