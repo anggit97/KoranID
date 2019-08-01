@@ -26,6 +26,9 @@ dependencies {
     implementation Reactivex.java
     implementation Reactivex.android
 
+    /*Glide*/
+    implementation Wasabeef.glide
+
     /*Test*/
     testImplementation Testing.junit
     testImplementation Testing.mockitoCore

@@ -1,4 +1,4 @@
-package com.bluparse.koranid.ui
+package com.bluparse.koranid.ui.main
 
 import com.bluparse.core.base.BasePresenter
 import com.bluparse.core.utils.rx.AppSchedulerProvider
@@ -17,7 +17,7 @@ class MainPresenter @Inject constructor(
         compositeDisposable.addAll(
             appDataManager.getTopHeadline(country, category)
                 .subscribeOn(appScheduler.io())
-                .subscribeOn(appScheduler.mainThread())
+                .observeOn(appScheduler.mainThread())
                 .subscribe(
                     { response ->
                         view?.showResponseSuccess(response)
