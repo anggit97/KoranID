@@ -1,5 +1,6 @@
 package com.bluparse.koranid.ui.main
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bluparse.koranid.R
 import com.bluparse.koranid.data.entity.MenuCategory
 import kotlinx.android.synthetic.main.row_item_category.view.*
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by Anggit Prayogo on 2019-08-01.
@@ -19,6 +21,13 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
         fun bindItem(menuCategory: MenuCategory) {
             with(itemView) {
                 tv_category_title.text = menuCategory.title
+            }
+
+            itemView.setOnClickListener { it ->
+                Intent().setClassName(it.context.packageName, menuCategory.classUrl)
+                    .also {
+                        itemView.context.startActivity(it)
+                    }
             }
         }
     }

@@ -17,7 +17,7 @@ class MainPresenter @Inject constructor(
         compositeDisposable.addAll(
             appDataManager.getTopHeadline(country, category)
                 .subscribeOn(appScheduler.io())
-                .subscribeOn(appScheduler.mainThread())
+                .observeOn(appScheduler.mainThread())
                 .subscribe(
                     { response ->
                         view?.showResponseSuccess(response)
