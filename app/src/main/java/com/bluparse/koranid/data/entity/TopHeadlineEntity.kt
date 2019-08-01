@@ -7,14 +7,14 @@ import com.google.gson.annotations.SerializedName
  */
 data class TopHeadline(
     @SerializedName("articles")
-    val articles: List<Article?>?,
+    val articles: List<ArticleHeadline?>?,
     @SerializedName("status")
     val status: String?, // ok
     @SerializedName("totalResults")
     val totalResults: Int? // 70
 )
 
-data class Article(
+data class ArticleHeadline(
     @SerializedName("author")
     val author: String?, // Murhan
     @SerializedName("content")

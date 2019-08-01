@@ -14,17 +14,22 @@
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             android:id="@+id/swipe_refresh_layout">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-            <include layout="@layout/cell_category"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <include layout="@layout/cell_top_headline"/>
+                <include layout="@layout/cell_category"/>
 
+                <include layout="@layout/cell_top_headline"/>
 
-        </LinearLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -11,6 +11,10 @@ interface MainContact {
     interface View : BaseView {
 
         fun showResponseSuccess(response: TopHeadline?)
+
+        fun showLoading()
+
+        fun hideLoading()
     }
 
     interface Presenter {
