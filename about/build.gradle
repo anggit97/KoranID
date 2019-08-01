@@ -1,0 +1,34 @@
+apply from: "$rootDir/common.gradle"
+
+dependencies {
+
+    implementation project(":core")
+    implementation project(":network")
+
+
+    /*Android Support*/
+    implementation AndroidSupport.v4
+    implementation AndroidSupport.cardview
+    implementation AndroidSupport.recyclerview
+    implementation AndroidSupport.design
+    implementation AndroidSupport.appCompat
+    implementation AndroidSupport.constraintLayout
+
+    /*Network*/
+    implementation Retrofit.retrofit
+    implementation Retrofit.gson
+    implementation Retrofit.gsonConverter
+    implementation Retrofit.okHttpLogging
+    implementation Retrofit.rxAdapter
+
+    /*Dagger2*/
+    implementation Dagger.dagger
+    kapt Dagger.compiler
+    implementation Dagger.android
+    implementation Dagger.androidSupport
+    kapt Dagger.processor
+
+    /*Rxjava2*/
+    implementation Reactivex.java
+    implementation Reactivex.android
+}

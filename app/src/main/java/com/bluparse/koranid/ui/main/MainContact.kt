@@ -1,4 +1,4 @@
-package com.bluparse.koranid.ui
+package com.bluparse.koranid.ui.main
 
 import com.bluparse.core.base.BaseView
 import com.bluparse.koranid.data.entity.TopHeadline
@@ -11,6 +11,10 @@ interface MainContact {
     interface View : BaseView {
 
         fun showResponseSuccess(response: TopHeadline?)
+
+        fun showLoading()
+
+        fun hideLoading()
     }
 
     interface Presenter {
