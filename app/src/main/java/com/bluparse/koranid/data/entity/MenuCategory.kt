@@ -5,5 +5,6 @@ package com.bluparse.koranid.data.entity
  */
 data class MenuCategory(
     var image: Int,
-    var title: String
+    var title: String,
+    var classUrl: String
 )

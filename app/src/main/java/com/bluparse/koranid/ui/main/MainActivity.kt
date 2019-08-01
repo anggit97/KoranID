@@ -1,5 +1,6 @@
 package com.bluparse.koranid.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log.e
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +17,10 @@ import kotlinx.android.synthetic.main.cell_top_headline.*
 import javax.inject.Inject
 
 private const val CLASS_SPORT = "com.bluparse.features_sport.ui.list.SportActivity"
+private const val CLASS_ENTERTAINMENT = "com.bluparse.features_sport.ui.list.SportActivity"
+private const val CLASS_BUSINESS = "com.bluparse.features_sport.ui.list.SportActivity"
+private const val CLASS_TECH = "com.bluparse.features_sport.ui.list.SportActivity"
+private const val CLASS_FOOD = "com.bluparse.features_sport.ui.list.SportActivity"
 
 class MainActivity : BaseActivity(), MainContact.View {
 
@@ -71,11 +76,11 @@ class MainActivity : BaseActivity(), MainContact.View {
     private fun generateMenuCategory() {
         menuCategoryList.clear()
         menuCategoryList.apply {
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_sport)))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_business)))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_entertainment)))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_tech)))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_food)))
+            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_sport), CLASS_SPORT))
+            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_business), CLASS_BUSINESS))
+            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_entertainment), CLASS_ENTERTAINMENT))
+            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_tech), CLASS_TECH))
+            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_food), CLASS_FOOD))
         }
         adapterCategory.setItems(menuCategoryList)
     }
@@ -98,7 +103,7 @@ class MainActivity : BaseActivity(), MainContact.View {
     }
 
     override fun showResponseSuccess(response: TopHeadline?) {
-        topHeadlineList.clear()
+//        topHeadlineList.clear()
         adapterTopHeadline.setItems(response?.articles as MutableList<ArticleHeadline>)
     }
 

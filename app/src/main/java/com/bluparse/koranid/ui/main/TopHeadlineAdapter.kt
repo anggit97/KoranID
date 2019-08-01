@@ -35,7 +35,7 @@ class TopHeadlineAdapter : RecyclerView.Adapter<TopHeadlineAdapter.ViewHolder>()
     }
 
     fun setItems(topHeadlineList: MutableList<ArticleHeadline>) {
-        this.topHeadlineList.clear()
+//        this.topHeadlineList.clear()
         this.topHeadlineList = topHeadlineList
         notifyDataSetChanged()
     }
