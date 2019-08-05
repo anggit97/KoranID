@@ -30,9 +30,9 @@ class MainPresenterTest {
 
     @Before
     fun setUp() {
-        appSchedulerProvider = AppSchedulerProvider()
-        presenterTest = MainPresenter(dataManager, appSchedulerProvider)
-        presenterTest.attachView(view)
+//        appSchedulerProvider = AppSchedulerProvider()
+//        presenterTest = MainPresenter(dataManager, appSchedulerProvider)
+//        presenterTest.attachView(view)
     }
 
     @Test
