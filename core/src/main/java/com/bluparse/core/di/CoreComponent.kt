@@ -15,5 +15,5 @@ import javax.inject.Singleton
 )
 interface CoreComponent {
 
-    fun AppSchedulerProvider(): SchedulerProvider
+    fun appSchedulerProvider(): SchedulerProvider
 }

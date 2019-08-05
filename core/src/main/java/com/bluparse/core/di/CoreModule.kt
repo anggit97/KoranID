@@ -17,4 +17,8 @@ class CoreModule {
     fun provideAppScheduler(): SchedulerProvider {
         return AppSchedulerProvider()
     }
+
+//    @CoreScope
+//    @Provides
+//    fun provideRetrofit():
 }
