@@ -27,7 +27,8 @@ dependencies {
     implementation Reactivex.android
 
     /*Glide*/
-    implementation Wasabeef.glide
+    implementation ImageRenderer.glide
+    kapt ImageRenderer.glideProccessor
 
     /*Test*/
     testImplementation Testing.junit

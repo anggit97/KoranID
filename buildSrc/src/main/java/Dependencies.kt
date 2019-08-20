@@ -101,6 +101,11 @@ object Version {
     const val wasabeefGlide = "4.0.1"
 
     /**
+     * Image Rendering
+     */
+    const val glide = "4.9.0"
+
+    /**
      * Karumi
      */
     const val dexter = "4.2.0"
@@ -338,6 +343,11 @@ object Exoplayer{
 object Intuit{
     val sdpAndroid = "com.intuit.sdp:sdp-android:${Version.sdpAndroid}"
     val sspAndroid = "com.intuit.ssp:ssp-android:${Version.sspAndroid}"
+}
+
+object ImageRenderer{
+    val glide = "com.github.bumptech.glide:glide:${Version.glide}"
+    val glideProccessor = "com.github.bumptech.glide:compiler:${Version.glide}"
 }
 
 object Testing{

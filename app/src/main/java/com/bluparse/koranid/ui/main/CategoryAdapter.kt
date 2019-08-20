@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bluparse.core.utils.showImage
 import com.bluparse.koranid.R
 import com.bluparse.koranid.data.entity.MenuCategory
 import kotlinx.android.synthetic.main.row_item_category.view.*
@@ -21,6 +22,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
         fun bindItem(menuCategory: MenuCategory) {
             with(itemView) {
                 tv_category_title.text = menuCategory.title
+                iv_category.showImage(itemView.context, menuCategory.image)
             }
 
             itemView.setOnClickListener { it ->

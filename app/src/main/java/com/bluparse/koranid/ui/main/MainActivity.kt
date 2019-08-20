@@ -1,12 +1,12 @@
 package com.bluparse.koranid.ui.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log.e
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bluparse.core.base.BaseActivity
 import com.bluparse.koranid.R
+import com.bluparse.core.R as core
 import com.bluparse.koranid.data.entity.ArticleHeadline
 import com.bluparse.koranid.data.entity.MenuCategory
 import com.bluparse.koranid.data.entity.TopHeadline
@@ -52,13 +52,6 @@ class MainActivity : BaseActivity(), MainContact.View {
 
         presenter.getTopHeadline("id", "sports")
 
-//        button.setOnClickListener {
-//            Intent().setClassName(packageName, CLASS_SPORT)
-//                .also {
-//                    startActivity(it)
-//                }
-//        }
-
         onActionListener()
     }
 
@@ -76,11 +69,11 @@ class MainActivity : BaseActivity(), MainContact.View {
     private fun generateMenuCategory() {
         menuCategoryList.clear()
         menuCategoryList.apply {
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_sport), CLASS_SPORT))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_business), CLASS_BUSINESS))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_entertainment), CLASS_ENTERTAINMENT))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_tech), CLASS_TECH))
-            add(MenuCategory(R.drawable.ic_launcher_foreground, getString(R.string.category_food), CLASS_FOOD))
+            add(MenuCategory(core.drawable.icon_sport, getString(R.string.category_sport), CLASS_SPORT))
+            add(MenuCategory(core.drawable.icon_business, getString(R.string.category_business), CLASS_BUSINESS))
+            add(MenuCategory(core.drawable.icon_entertainment, getString(R.string.category_entertainment), CLASS_ENTERTAINMENT))
+            add(MenuCategory(core.drawable.icon_tech, getString(R.string.category_tech), CLASS_TECH))
+            add(MenuCategory(core.drawable.icon_food, getString(R.string.category_food), CLASS_FOOD))
         }
         adapterCategory.setItems(menuCategoryList)
     }
