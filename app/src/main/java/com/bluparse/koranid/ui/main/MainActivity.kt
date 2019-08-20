@@ -102,8 +102,8 @@ class MainActivity : BaseActivity(), MainContact.View {
         rv_headline.isNestedScrollingEnabled = false
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun showResponseSuccess(response: TopHeadline?) {
-//        topHeadlineList.clear()
         adapterTopHeadline.setItems(response?.articles as MutableList<ArticleHeadline>)
     }
 

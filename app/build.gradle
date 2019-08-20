@@ -28,7 +28,7 @@ android {
     }
 
 
-    dynamicFeatures = [":features_sport"]
+    dynamicFeatures = []
 }
 
 dependencies {

@@ -8,6 +8,7 @@ import com.bluparse.koranid.data.remote.MainRemoteRepositoryImpl
 import com.bluparse.network.services
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
 
 /**
  * Created by Anggit Prayogo on 2019-07-29.
@@ -17,8 +18,8 @@ class MainModule {
 
     @MainScope
     @Provides
-    fun provideService(): MainService {
-        return services()
+    fun provideService(retrofit: Retrofit): MainService {
+        return retrofit.create(MainService::class.java)
     }
 
     @MainScope
@@ -35,7 +36,7 @@ class MainModule {
 
     @MainScope
     @Provides
-    fun provideAppScheduler(): AppSchedulerProvider{
+    fun provideAppScheduler(): AppSchedulerProvider {
         return AppSchedulerProvider()
     }
 }

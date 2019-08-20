@@ -1,1 +1,1 @@
-include ':app', ':core', ':network', ':features_sport', ':about'
+include ':app', ':core', ':network', ':about'
