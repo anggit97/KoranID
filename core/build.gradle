@@ -33,6 +33,9 @@ dependencies {
     /*Glide*/
     implementation ImageRenderer.glide
     kapt ImageRenderer.glideProccessor
+    
+    /*Font Adapter*/
+    implementation Font.calligraphy
 
     /*Test*/
     testImplementation Testing.junit

@@ -59,6 +59,7 @@ dependencies {
 
     /*Dagger2*/
     implementation Dagger.dagger
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt Dagger.compiler
     implementation Dagger.android
     implementation Dagger.androidSupport

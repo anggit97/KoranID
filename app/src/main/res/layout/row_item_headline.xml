@@ -1,69 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/dp_7"
-        app:cardElevation="@dimen/dp_7"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_10">
+        app:cardElevation="@dimen/dp_7">
 
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp_7">
 
-        <ImageView
-                android:id="@+id/iv_news_thumbnail"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="@dimen/dp_100"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background"/>
-
         <LinearLayout
-                android:layout_toEndOf="@id/iv_news_thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_7"
                 android:layout_marginEnd="@dimen/dp_7"
-                android:orientation="vertical">
+                android:layout_toStartOf="@id/iv_news_thumbnail"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_10">
 
             <TextView
                     android:id="@+id/tv_news_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="Counter Terrorism at Iraq By Isis Has Been Spreadout"
+                    android:maxLines="2"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/sp_16"
-                    android:maxLines="2"/>
+                    android:textStyle="bold"
+                    tools:text="Counter Terrorism at Iraq By Isis Has Been Spreadout" />
 
-            <LinearLayout
-                    android:layout_width="match_parent"
+
+            <TextView
+                    android:id="@+id/tv_news_create_by"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:layout_marginBottom="@dimen/dp_7"
-                    android:orientation="horizontal">
-
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_edit_grey_24dp"
-                        android:id="@+id/iv_news_create_by"/>
-
-                <TextView
-                        android:id="@+id/tv_news_create_by"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="Mark Williams"
-                        android:textSize="@dimen/sp_14"
-                        android:layout_marginStart="@dimen/dp_7"
-                        android:layout_gravity="center"/>
-
-            </LinearLayout>
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="Mark Williams" />
 
         </LinearLayout>
+
+        <ImageView
+                android:id="@+id/iv_news_thumbnail"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
 
     </RelativeLayout>
 

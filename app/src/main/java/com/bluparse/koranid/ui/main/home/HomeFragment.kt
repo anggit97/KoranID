@@ -49,6 +49,17 @@ class HomeFragment : BaseFragment(), HomeContract.View {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initToolbar()
+        initPresenter()
+        onActionListener()
+        initRecyclerViewCategory()
+        initRecyclerViewTopHeadline()
+        presenter.getTopHeadline("id", "")
+        generateMenuCategory()
+    }
+
     private fun initToolbar() {
         tv_app_bar_title.text = getString(R.string.app_name)
     }
@@ -111,9 +122,9 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     override fun showError(throwable: Throwable) {
         e("DATA ERROR: ", throwable.message)
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.detachView()
-    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        presenter.detachView()
+//    }
 }
