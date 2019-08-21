@@ -3,4 +3,8 @@
     <dimen name="dp58">58dp</dimen>
     <dimen name="dp8">8dp</dimen>
     <dimen name="dp16">16dp</dimen>
+    <dimen name="dp3">3dp</dimen>
+    <dimen name="dp7">7dp</dimen>
+    <dimen name="dp24">24dp</dimen>
+    <dimen name="dp32">32dp</dimen>
 </resources>

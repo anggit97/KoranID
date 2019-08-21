@@ -22,6 +22,8 @@
         <item name="android:layout_marginEnd">@dimen/dp_16</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:drawablePadding">@dimen/dp_7</item>
+        <item name="android:drawableStart">@drawable/ic_header_start</item>
     </style>
 
     <style name="CellCategory">

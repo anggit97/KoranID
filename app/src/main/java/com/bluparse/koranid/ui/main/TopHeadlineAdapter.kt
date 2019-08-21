@@ -8,7 +8,9 @@ import com.bluparse.core.utils.showImage
 import com.bluparse.core.utils.showImageRounded
 import com.bluparse.koranid.R
 import com.bluparse.koranid.data.entity.ArticleHeadline
+import com.bluparse.koranid.ui.detail.DetailNewsActivity
 import kotlinx.android.synthetic.main.row_item_headline.view.*
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by Anggit Prayogo on 2019-08-01.
@@ -24,6 +26,10 @@ class TopHeadlineAdapter : RecyclerView.Adapter<TopHeadlineAdapter.ViewHolder>()
                 tv_news_create_by.text = articleHeadline.source?.name
                 iv_news_thumbnail.showImageRounded(itemView.context, articleHeadline.urlToImage)
             }
+
+            itemView.setOnClickListener {
+                it.context.startActivity<DetailNewsActivity>()
+            }
         }
     }
 
@@ -38,7 +44,6 @@ class TopHeadlineAdapter : RecyclerView.Adapter<TopHeadlineAdapter.ViewHolder>()
     }
 
     fun setItems(topHeadlineList: MutableList<ArticleHeadline>) {
-//        this.topHeadlineList.clear()
         this.topHeadlineList = topHeadlineList
         notifyDataSetChanged()
     }
