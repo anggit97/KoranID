@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">core</string>
+
+    <string name="home_title">Beranda</string>
+    <string name="browse_title">Jelajahi</string>
+    <string name="profile_title">Profil</string>
 </resources>

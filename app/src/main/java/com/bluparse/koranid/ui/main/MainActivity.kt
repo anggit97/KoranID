@@ -1,119 +1,66 @@
 package com.bluparse.koranid.ui.main
 
 import android.os.Bundle
-import android.util.Log.e
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.bluparse.core.base.BaseActivity
+import com.bluparse.core.base.BaseFragment
 import com.bluparse.koranid.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.*
 import com.bluparse.core.R as core
-import com.bluparse.koranid.data.entity.ArticleHeadline
-import com.bluparse.koranid.data.entity.MenuCategory
-import com.bluparse.koranid.data.entity.TopHeadline
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.base_app_bar.*
-import kotlinx.android.synthetic.main.cell_category.*
-import kotlinx.android.synthetic.main.cell_top_headline.*
-import javax.inject.Inject
 
-private const val CLASS_SPORT = "com.bluparse.features_sport.ui.list.SportActivity"
-private const val CLASS_ENTERTAINMENT = "com.bluparse.features_sport.ui.list.SportActivity"
-private const val CLASS_BUSINESS = "com.bluparse.features_sport.ui.list.SportActivity"
-private const val CLASS_TECH = "com.bluparse.features_sport.ui.list.SportActivity"
-private const val CLASS_FOOD = "com.bluparse.features_sport.ui.list.SportActivity"
+class MainActivity : BaseActivity(),
+    ViewPager.OnPageChangeListener,
+    BottomNavigationView.OnNavigationItemReselectedListener,
+    BottomNavigationView.OnNavigationItemSelectedListener{
 
-class MainActivity : BaseActivity(), MainContact.View {
+    // overall back stack of containers
+    private val backStack = Stack<Int>()
 
-    @Inject
-    lateinit var presenter: MainPresenter
+    // list of base destination containers
+    private val fragments = listOf(
+        BaseFragment.newInstance(R.layout.content_home_base, R.id.toolbar_home, R.id.nav_host_home),
+        BaseFragment.newInstance(R.layout.content_library_base, R.id.toolbar_library, R.id.nav_host_library),
+        BaseFragment.newInstance(R.layout.content_settings_base, R.id.toolbar_settings, R.id.nav_host_settings))
 
-    @Inject
-    lateinit var adapterCategory: CategoryAdapter
 
-    @Inject
-    lateinit var adapterTopHeadline: TopHeadlineAdapter
+    // map of navigation_id to container index
+    private val indexToPage = mapOf(0 to R.id.home, 1 to R.id.library, 2 to R.id.settings)
 
-    private var menuCategoryList: MutableList<MenuCategory> = mutableListOf()
-    private var topHeadlineList: MutableList<ArticleHeadline> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        initToolbar()
-
-        initPresenter()
-
-        initRecyclerViewCategory()
-
-        initRecyclerViewTopHeadline()
-
-        generateMenuCategory()
-
-        presenter.getTopHeadline("id", "sports")
-
-        onActionListener()
     }
 
-    private fun initToolbar() {
-        tv_app_bar_title.text = getString(R.string.app_name)
+    override fun onPageScrollStateChanged(state: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun onActionListener() {
-        swipe_refresh_layout.setOnRefreshListener {
-            presenter.getTopHeadline("id", "sports")
-            swipe_refresh_layout.isRefreshing = false
-        }
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun generateMenuCategory() {
-        menuCategoryList.clear()
-        menuCategoryList.apply {
-            add(MenuCategory(core.drawable.icon_sport, getString(R.string.category_sport), CLASS_SPORT))
-            add(MenuCategory(core.drawable.icon_business, getString(R.string.category_business), CLASS_BUSINESS))
-            add(MenuCategory(core.drawable.icon_entertainment, getString(R.string.category_entertainment), CLASS_ENTERTAINMENT))
-            add(MenuCategory(core.drawable.icon_tech, getString(R.string.category_tech), CLASS_TECH))
-            add(MenuCategory(core.drawable.icon_food, getString(R.string.category_food), CLASS_FOOD))
-        }
-        adapterCategory.setItems(menuCategoryList)
+    override fun onPageSelected(position: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun initPresenter() {
-        presenter.attachView(this)
+    override fun onNavigationItemReselected(p0: MenuItem) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun initRecyclerViewCategory() {
-        val layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
-        rv_category.layoutManager = layoutManager
-        rv_category.adapter = adapterCategory
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun initRecyclerViewTopHeadline() {
-        val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        rv_headline.layoutManager = layoutManager
-        rv_headline.adapter = adapterTopHeadline
-        rv_headline.isNestedScrollingEnabled = false
-    }
+    inner class ViewPagerAdapter : FragmentPagerAdapter(supportFragmentManager) {
 
-    @Suppress("UNCHECKED_CAST")
-    override fun showResponseSuccess(response: TopHeadline?) {
-        adapterTopHeadline.setItems(response?.articles as MutableList<ArticleHeadline>)
-    }
+        override fun getItem(position: Int): Fragment = fragments[position]
 
-    override fun showLoading() {
-        swipe_refresh_layout.isRefreshing = true
-    }
+        override fun getCount(): Int = fragments.size
 
-    override fun hideLoading() {
-        swipe_refresh_layout.isRefreshing = false
-    }
-
-    override fun showError(throwable: Throwable) {
-        e("DATA ERROR: ", throwable.message)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.detachView()
     }
 }

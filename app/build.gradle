@@ -46,6 +46,10 @@ dependencies {
     implementation AndroidSupport.appCompat
     implementation AndroidSupport.constraintLayout
 
+    /*Jetpack*/
+    implementation Jetpack.navigationFragment
+    implementation Jetpack.navigationUI
+
     /*Network*/
     implementation Retrofit.retrofit
     implementation Retrofit.gson
@@ -65,20 +69,16 @@ dependencies {
     implementation Reactivex.android
 
     /*Facebook*/
-    implementation Facebook.login
-    implementation Facebook.shimmer
+    implementation LoadingIndicator.shimmer
 
     /*AirBnb*/
-    implementation Airbnb.lottie
+    implementation AnimationImage.lottie
 
     /*Font Adapter*/
     implementation Font.calligraphy
 
     /*Karumi*/
     implementation Karumi.dexter
-
-    /*NavigationBottom*/
-    implementation Ah.bottomNav
 
     /*multidex*/
     implementation Multidex.multidex

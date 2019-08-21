@@ -22,6 +22,10 @@ dependencies {
     implementation AndroidSupport.design
     implementation AndroidSupport.appCompat
 
+    /*Jetpack*/
+    implementation Jetpack.navigationFragment
+    implementation Jetpack.navigationUI
+
     /*Rxjava2*/
     implementation Reactivex.java
     implementation Reactivex.android

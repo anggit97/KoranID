@@ -46,6 +46,11 @@ object Version {
     const val googleAuth = "16.0.1"
 
     /**
+     * Jetpack
+     */
+    const val navigationComponent = "2.1.0-rc01"
+
+    /**
      * Firebase
      */
     const val firebaseCrashlytics = "2.9.8"
@@ -65,13 +70,7 @@ object Version {
      * RX
      */
     const val rxjava2 = "2.1.9"
-    const val rxbinding = "0.4.0"
     const val rxandroid = "2.1.0"
-
-    /**
-     * Butterknive
-     */
-    const val butterknive = "10.0.0"
 
     /**
      * Dagger 2
@@ -81,7 +80,6 @@ object Version {
     /**
      * Facebook
      */
-    const val facebookLogin = "[4,5)"
     const val facebookShimmer = "0.4.0"
 
     /**
@@ -95,12 +93,6 @@ object Version {
     const val calligraphy = "2.3.0"
 
     /**
-     * Wasabeef
-     */
-    const val wasabeefRichEditor = "1.2.2"
-    const val wasabeefGlide = "4.0.1"
-
-    /**
      * Image Rendering
      */
     const val glide = "4.9.0"
@@ -111,12 +103,6 @@ object Version {
     const val dexter = "4.2.0"
 
     /**
-     * Midtrans
-     */
-    const val midtransSendbox = "1.21.2-SANDBOX"
-    const val midtransProd = "1.21.2"
-
-    /**
      * Multidex
      */
     const val multidex = "2.0.1"
@@ -125,34 +111,6 @@ object Version {
      * Anko
      */
     const val anko = "0.10.8"
-
-    /**
-     * Ah
-     */
-    const val ahBottomNav = "2.1.0"
-
-    /**
-     * Zxing
-     */
-    const val zxingAndroid = "3.6.0@aar"
-    const val zxingCore = "3.3.2"
-
-    /**
-     * Toptoche
-     */
-    const val toptocheSearchablespinner = "1.3.1"
-
-    /**
-     * Manc
-     */
-    const val mancMaterialSearchBar = "0.8.1"
-
-    /**
-     * Indicator
-     */
-    const val indicatorSpotsDialog = "0.7@aar"
-    const val indicatorPager = "1.0.10"
-    const val indicatorAviLoading = "2.1.3"
 
     /**
      * Easyvalidation
@@ -178,17 +136,6 @@ object Version {
      * Button
      */
     const val fancyButton = "1.8.4"
-
-    /**
-     * Exoplayer
-     */
-    const val exoplayer = "r2.4.2"
-
-    /**
-     * Intuit
-     */
-    const val sdpAndroid = "1.0.6"
-    const val sspAndroid = "1.0.6"
 
     /**
      * Test
@@ -257,12 +204,11 @@ object Firebase{
     val messaging = "com.google.firebase:firebase-messaging:${Version.firebaseMessaging}"
 }
 
-object Facebook{
-    val login = "com.facebook.android:facebook-login:${Version.facebookLogin}"
+object LoadingIndicator{
     val shimmer = "com.facebook.shimmer:shimmer:${Version.facebookShimmer}"
 }
 
-object Airbnb{
+object AnimationImage{
     val lottie = "com.airbnb.android:lottie:${Version.lottie}"
 }
 
@@ -270,40 +216,8 @@ object Font{
     val calligraphy = "uk.co.chrisjenx:calligraphy:${Version.calligraphy}"
 }
 
-object Jakewharton{
-    val butterknive = "com.jakewharton:butterknife:${Version.butterknive}"
-    val butterkniveCompiler = "com.jakewharton:butterknife-compiler:${Version.butterknive}"
-}
-
-object Wasabeef{
-    val richEditor = "jp.wasabeef:richeditor-android:${Version.wasabeefRichEditor}"
-    val glide = "jp.wasabeef:glide-transformations:${Version.wasabeefGlide}"
-}
-
 object Karumi{
     val dexter = "com.karumi:dexter:${Version.dexter}"
-}
-
-object Midtrans{
-    val sendbox = "com.midtrans:uikit:${Version.midtransSendbox}"
-    val prod = "com.midtrans:uikit:${Version.midtransProd}"
-}
-
-object Zxing{
-    val android = "com.journeyapps:zxing-android-embedded:${Version.zxingAndroid}"
-    val core = "com.google.zxing:core:${Version.zxingCore}"
-}
-
-object Ah{
-    val bottomNav = "com.aurelhubert:ahbottomnavigation:${Version.ahBottomNav}"
-}
-
-object Toptoche{
-    val searchableSpinner = "com.toptoche.searchablespinner:searchablespinnerlibrary:${Version.toptocheSearchablespinner}"
-}
-
-object Manc{
-    val materialSearchBar = "com.github.mancj:MaterialSearchBar:${Version.mancMaterialSearchBar}"
 }
 
 object Multidex{
@@ -314,12 +228,6 @@ object Easyvalidation{
     val core = "com.wajahatkarim3.easyvalidation:easyvalidation-core:${Version.easyvalidationCore}"
 }
 
-object Indicator{
-    val spotsDialog = "com.github.d-max:spots-dialog:${Version.indicatorSpotsDialog}"
-    val pagerIndicator = "com.ryanjeffreybrooks:indefinitepagerindicator:${Version.indicatorPager}"
-    val aviLoading = "com.wang.avi:library:${Version.indicatorAviLoading}"
-}
-
 object ImagePicker{
     val paparazzo = "com.github.miguelbcr:RxPaparazzo:${Version.paparazzoVersion}"
 }
@@ -328,26 +236,18 @@ object ImageCompressor{
     val zelory = "id.zelory:compressor:${Version.compressorVersion}"
 }
 
-object UIComponent{
-    val zigzagView = "com.github.beigirad:ZigzagView:${Version.zigzagVersion}"
-}
-
 object Button{
     val fancyButton = "com.github.medyo:fancybuttons:${Version.fancyButton}"
-}
-
-object Exoplayer{
-    val exoplayer = "com.google.android.exoplayer:exoplayer:${Version.exoplayer}"
-}
-
-object Intuit{
-    val sdpAndroid = "com.intuit.sdp:sdp-android:${Version.sdpAndroid}"
-    val sspAndroid = "com.intuit.ssp:ssp-android:${Version.sspAndroid}"
 }
 
 object ImageRenderer{
     val glide = "com.github.bumptech.glide:glide:${Version.glide}"
     val glideProccessor = "com.github.bumptech.glide:compiler:${Version.glide}"
+}
+
+object Jetpack{
+    val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Version.navigationComponent}"
+    val navigationUI = "androidx.navigation:navigation-ui-ktx:${Version.navigationComponent}"
 }
 
 object Testing{

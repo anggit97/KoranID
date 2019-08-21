@@ -1,4 +1,4 @@
-package com.bluparse.koranid.di.main
+package com.bluparse.koranid.ui.main.di.home
 
 import com.bluparse.koranid.ui.main.CategoryAdapter
 import com.bluparse.koranid.ui.main.TopHeadlineAdapter
@@ -6,10 +6,11 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Created by Anggit Prayogo on 2019-08-01.
+ * Created by Anggit PRayogo on 2019-08-20.
+ * github : @anggit97
  */
 @Module
-class AdapterModule {
+class HomeFragmentAdapterModule {
 
     @Provides
     fun provideCategoryAdapter(): CategoryAdapter {

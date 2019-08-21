@@ -1,8 +1,7 @@
 package com.bluparse.koranid.di
 
-import com.bluparse.koranid.di.main.AdapterModule
-import com.bluparse.koranid.di.main.MainActivityModule
 import com.bluparse.koranid.ui.main.MainActivity
+import com.bluparse.koranid.ui.main.di.MainFragmentBindingModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -14,8 +13,7 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(
         modules = [
-            MainActivityModule::class,
-            AdapterModule::class
+            MainFragmentBindingModule::class
         ]
     )
     abstract fun provideMainActivity(): MainActivity

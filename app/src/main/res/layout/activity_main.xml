@@ -6,31 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <include layout="@layout/base_app_bar"/>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <com.bluparse.core.ui.NonSwipingViewPager
+            android:id="@+id/main_pager"
+            android:layout_marginBottom="@dimen/dp58"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            android:id="@+id/swipe_refresh_layout">
+            android:layout_height="match_parent"/>
 
-        <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                <include layout="@layout/cell_category"/>
-
-                <include layout="@layout/cell_top_headline"/>
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/main_menu"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
