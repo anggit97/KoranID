@@ -51,17 +51,12 @@ class HomeFragment : BaseFragment(), HomeContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initToolbar()
         initPresenter()
         onActionListener()
         initRecyclerViewCategory()
         initRecyclerViewTopHeadline()
         presenter.getTopHeadline("id", "")
         generateMenuCategory()
-    }
-
-    private fun initToolbar() {
-        tv_app_bar_title.text = getString(R.string.app_name)
     }
 
     private fun onActionListener() {

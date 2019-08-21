@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.AppBarLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent" android:layout_height="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
         android:background="@color/colorWhite">
 
 
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:id="@+id/tv_app_bar_title"
-                  tools:text="Header App Bar"
-                  style="@style/AppBarText"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/tv_app_bar_title"
+                style="@style/AppBarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Header App Bar" />
 
     </RelativeLayout>
 

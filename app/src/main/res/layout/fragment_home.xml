@@ -5,7 +5,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorWhite">
 
-    <include layout="@layout/base_app_bar" />
+    <include layout="@layout/base_collapse_home_app_bar" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
