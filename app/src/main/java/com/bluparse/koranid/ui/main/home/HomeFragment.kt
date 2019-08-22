@@ -153,13 +153,13 @@ class HomeFragment : BaseFragment(), HomeContract.View, HomeAdapterListener {
     }
 
     override fun showLoadingShimmer() {
-        shimmer_home.setVisible()
-        rv_headline.setGone()
+        shimmer_home?.setVisible()
+        rv_headline?.setGone()
     }
 
     override fun hideLoadingShimmer() {
-        shimmer_home.setGone()
-        rv_headline.setVisible()
+        shimmer_home?.setGone()
+        rv_headline?.setVisible()
     }
 
     override fun showError(throwable: Throwable) {

@@ -7,11 +7,13 @@ import com.bluparse.core.base.BaseActivity
 import com.bluparse.koranid.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity(){
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initStatusBarPref()
 
         NavigationUI.setupWithNavController(
             bottom_navigation,

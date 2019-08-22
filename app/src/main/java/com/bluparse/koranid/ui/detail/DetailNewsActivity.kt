@@ -1,6 +1,7 @@
 package com.bluparse.koranid.ui.detail
 
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.os.Bundle
 import com.bluparse.core.base.BaseActivity
 import com.bluparse.core.utils.ConstantIntent
@@ -8,9 +9,6 @@ import com.bluparse.core.utils.showImageRounded
 import com.bluparse.koranid.R
 import com.bluparse.koranid.data.entity.ArticleHeadline
 import kotlinx.android.synthetic.main.activity_detail_news.*
-import androidx.core.view.ViewCompat.setTransitionName
-import android.os.Build.VERSION_CODES.LOLLIPOP
-import android.os.Build.VERSION.SDK_INT
 
 
 class DetailNewsActivity : BaseActivity() {
@@ -20,6 +18,7 @@ class DetailNewsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_news)
+        initStatusBarPref()
         handleIntent()
         bindView()
         onListener()
