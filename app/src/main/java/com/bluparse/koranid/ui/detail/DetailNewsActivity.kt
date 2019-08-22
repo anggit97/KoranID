@@ -1,10 +1,10 @@
 package com.bluparse.koranid.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bluparse.core.base.BaseActivity
 import com.bluparse.koranid.R
 
-class DetailNewsActivity : AppCompatActivity() {
+class DetailNewsActivity : BaseActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

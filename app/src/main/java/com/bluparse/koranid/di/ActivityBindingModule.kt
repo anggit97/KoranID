@@ -1,5 +1,6 @@
 package com.bluparse.koranid.di
 
+import com.bluparse.koranid.ui.detail.DetailNewsActivity
 import com.bluparse.koranid.ui.main.MainActivity
 import com.bluparse.koranid.ui.main.di.MainFragmentBindingModule
 import dagger.Module
@@ -17,4 +18,9 @@ abstract class ActivityBindingModule {
         ]
     )
     abstract fun provideMainActivity(): MainActivity
+
+    @ContributesAndroidInjector(
+        modules = []
+    )
+    abstract fun provideDetailNews(): DetailNewsActivity
 }
