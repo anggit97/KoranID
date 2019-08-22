@@ -4,6 +4,9 @@ android{
     defaultConfig{
         buildConfigField "String","BASE_URL","\"https://newsapi.org/v2/\""
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {

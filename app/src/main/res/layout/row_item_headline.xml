@@ -48,7 +48,9 @@
                 android:layout_height="@dimen/dp_100"
                 android:layout_alignParentEnd="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"
+                android:transitionName="@string/shared_element_transition_1"
+                tools:ignore="UnusedAttribute" />
 
     </RelativeLayout>
 

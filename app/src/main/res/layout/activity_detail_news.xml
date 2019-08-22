@@ -74,11 +74,13 @@
 
             <TextView
                     android:id="@+id/tv_body"
-                    android:layout_marginTop="@dimen/dp_10"
+                    style="@style/TextAppearance.AppCompat.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:transitionName="@string/shared_element_transition_1"
                     tools:text="@string/body_ex"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
+                    tools:ignore="UnusedAttribute" />
 
         </LinearLayout>
 

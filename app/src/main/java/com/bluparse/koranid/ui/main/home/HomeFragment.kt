@@ -1,25 +1,34 @@
 package com.bluparse.koranid.ui.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.app.ActivityOptionsCompat.makeSceneTransitionAnimation
+import androidx.core.view.ViewCompat
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bluparse.core.base.BaseFragment
+import com.bluparse.core.utils.ConstantIntent
 import com.bluparse.koranid.R
 import com.bluparse.core.R as core
 import com.bluparse.koranid.data.entity.ArticleHeadline
 import com.bluparse.koranid.data.entity.MenuCategory
 import com.bluparse.koranid.data.entity.TopHeadline
+import com.bluparse.koranid.ui.detail.DetailNewsActivity
 import com.bluparse.koranid.ui.main.CategoryAdapter
 import com.bluparse.koranid.ui.main.TopHeadlineAdapter
-import kotlinx.android.synthetic.main.base_app_bar.*
 import kotlinx.android.synthetic.main.cell_category.*
 import kotlinx.android.synthetic.main.cell_top_headline.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.row_item_headline.view.*
 import javax.inject.Inject
+import androidx.core.view.ViewCompat.getTransitionName
+
 
 private const val CLASS_SPORT = "com.bluparse.features_sport.ui.list.SportActivity"
 private const val CLASS_ENTERTAINMENT = "com.bluparse.features_sport.ui.list.SportActivity"
@@ -28,7 +37,7 @@ private const val CLASS_TECH = "com.bluparse.features_sport.ui.list.SportActivit
 private const val CLASS_FOOD = "com.bluparse.features_sport.ui.list.SportActivity"
 
 
-class HomeFragment : BaseFragment(), HomeContract.View {
+class HomeFragment : BaseFragment(), HomeContract.View, HomeAdapterListener {
 
     @Inject
     lateinit var presenter: HomePresenter
@@ -41,6 +50,11 @@ class HomeFragment : BaseFragment(), HomeContract.View {
 
     private var menuCategoryList: MutableList<MenuCategory> = mutableListOf()
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        adapterTopHeadline.setAdapterListener(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,8 +83,20 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     private fun generateMenuCategory() {
         menuCategoryList.clear()
         menuCategoryList.apply {
-            add(MenuCategory(core.drawable.icon_sport, getString(R.string.category_sport), CLASS_SPORT))
-            add(MenuCategory(core.drawable.icon_business, getString(R.string.category_business), CLASS_BUSINESS))
+            add(
+                MenuCategory(
+                    core.drawable.icon_sport,
+                    getString(R.string.category_sport),
+                    CLASS_SPORT
+                )
+            )
+            add(
+                MenuCategory(
+                    core.drawable.icon_business,
+                    getString(R.string.category_business),
+                    CLASS_BUSINESS
+                )
+            )
             add(
                 MenuCategory(
                     core.drawable.icon_entertainment,
@@ -78,8 +104,20 @@ class HomeFragment : BaseFragment(), HomeContract.View {
                     CLASS_ENTERTAINMENT
                 )
             )
-            add(MenuCategory(core.drawable.icon_tech, getString(R.string.category_tech), CLASS_TECH))
-            add(MenuCategory(core.drawable.icon_food, getString(R.string.category_food), CLASS_FOOD))
+            add(
+                MenuCategory(
+                    core.drawable.icon_tech,
+                    getString(R.string.category_tech),
+                    CLASS_TECH
+                )
+            )
+            add(
+                MenuCategory(
+                    core.drawable.icon_food,
+                    getString(R.string.category_food),
+                    CLASS_FOOD
+                )
+            )
         }
         adapterCategory.setItems(menuCategoryList)
     }
@@ -117,9 +155,28 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     override fun showError(throwable: Throwable) {
         e("DATA ERROR: ", throwable.message)
     }
-//
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        presenter.detachView()
-//    }
+
+    override fun onClickItem(
+        articleHeadline: ArticleHeadline,
+        itemView: View
+    ) {
+        val intent = Intent(activity, DetailNewsActivity::class.java)
+        intent.putExtra(ConstantIntent.ITEM_NEWS, articleHeadline)
+        intent.putExtra(
+            activity?.getString(R.string.shared_element_transition_1),
+            getTransitionName(itemView.iv_news_thumbnail)
+        )
+
+        val options = activity?.let { fragmentActivity ->
+            getTransitionName(itemView.iv_news_thumbnail)?.let { ivNews ->
+                makeSceneTransitionAnimation(
+                    fragmentActivity,
+                    itemView.iv_news_thumbnail,
+                    ivNews
+                )
+            }
+        }
+
+        activity?.startActivity(intent, options?.toBundle())
+    }
 }
