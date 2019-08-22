@@ -68,9 +68,11 @@
             <ImageView
                     android:id="@+id/iv_news"
                     android:layout_width="match_parent"
+                    android:transitionName="@string/shared_element_transition_1"
                     android:layout_height="@dimen/dp_200"
                     android:layout_marginTop="@dimen/dp_10"
-                    android:src="@drawable/ic_launcher_foreground" />
+                    android:src="@drawable/ic_launcher_foreground"
+                    tools:targetApi="lollipop" />
 
             <TextView
                     android:id="@+id/tv_body"
@@ -78,9 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/dp_10"
-                    android:transitionName="@string/shared_element_transition_1"
-                    tools:text="@string/body_ex"
-                    tools:ignore="UnusedAttribute" />
+                    tools:text="@string/body_ex" />
 
         </LinearLayout>
 
