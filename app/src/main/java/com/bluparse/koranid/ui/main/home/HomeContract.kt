@@ -16,13 +16,18 @@ interface HomeContract {
         fun showLoading()
 
         fun hideLoading()
+
+        fun showLoadingShimmer()
+
+        fun hideLoadingShimmer()
     }
 
     interface Presenter {
 
         fun getTopHeadline(
             country: String,
-            category: String
+            category: String,
+            showShimmerLoading: Boolean
         )
     }
 }

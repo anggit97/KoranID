@@ -40,6 +40,9 @@ dependencies {
     /*Font Adapter*/
     implementation Font.calligraphy
 
+    /*Facebook*/
+    implementation LoadingIndicator.shimmer
+
     /*Test*/
     testImplementation Testing.junit
     testImplementation Testing.mockitoCore

@@ -148,17 +148,17 @@ object Version {
 }
 
 object Deps {
-    val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
+    const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
 }
 
 object AndroidSupport {
-    val appCompat = "androidx.appcompat:appcompat:${Version.support}"
-    val recyclerview = "androidx.recyclerview:recyclerview:${Version.support}"
-    val cardview = "androidx.cardview:cardview:${Version.support}"
-    val design = "com.google.android.material:material:${Version.support}"
-    val v4 = "androidx.legacy:legacy-support-v4:${Version.support}"
-    val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
-    val multidex = "com.android.support:multidex:${Version.multidex}"
+    const val appCompat = "androidx.appcompat:appcompat:${Version.support}"
+    const val recyclerview = "androidx.recyclerview:recyclerview:${Version.support}"
+    const val cardview = "androidx.cardview:cardview:${Version.support}"
+    const val design = "com.google.android.material:material:${Version.support}"
+    const val v4 = "androidx.legacy:legacy-support-v4:${Version.support}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
+    const val multidex = "com.android.support:multidex:${Version.multidex}"
 }
 
 object Retrofit {
@@ -205,7 +205,7 @@ object Firebase{
 }
 
 object LoadingIndicator{
-    val shimmer = "com.facebook.shimmer:shimmer:${Version.facebookShimmer}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${Version.facebookShimmer}"
 }
 
 object AnimationImage{

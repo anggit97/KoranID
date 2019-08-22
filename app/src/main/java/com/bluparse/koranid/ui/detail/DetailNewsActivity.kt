@@ -22,6 +22,13 @@ class DetailNewsActivity : BaseActivity() {
         setContentView(R.layout.activity_detail_news)
         handleIntent()
         bindView()
+        onListener()
+    }
+
+    private fun onListener() {
+        iv_back.setOnClickListener {
+            finish()
+        }
     }
 
     private fun handleIntent() {

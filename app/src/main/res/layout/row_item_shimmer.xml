@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorShimmer"
+        app:cardCornerRadius="@dimen/dp_7"
+        app:cardElevation="@dimen/dp_7">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_7">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_toStartOf="@id/iv_news_thumbnail"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_10">
+
+            <TextView
+                    android:id="@+id/tv_news_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_36"
+                    android:background="@color/colorShimmerItem"
+                    android:maxLines="2"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+
+            <TextView
+                    android:id="@+id/tv_news_create_by"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:background="@color/colorShimmerItem"
+                    android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/iv_news_thumbnail"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_alignParentEnd="true"
+                android:background="@color/colorShimmerItem"
+                android:scaleType="centerCrop"
+                tools:ignore="UnusedAttribute" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

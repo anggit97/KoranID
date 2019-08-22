@@ -14,21 +14,37 @@ class HomePresenter @Inject constructor(
     private val appScheduler: AppSchedulerProvider
 ) : BasePresenter<HomeContract.View>(), HomeContract.Presenter {
 
-    override fun getTopHeadline(country: String, category: String) {
-        view?.showLoading()
+    override fun getTopHeadline(country: String, category: String, showShimmerLoading: Boolean) {
+        checkLoadingTypeShowState(showShimmerLoading)
         compositeDisposable.addAll(
             appDataManager.getTopHeadline(country, category)
                 .subscribeOn(appScheduler.io())
                 .observeOn(appScheduler.mainThread())
                 .subscribe(
                     { response ->
-                        view?.hideLoading()
+                        checkLoadingTypeHideState(showShimmerLoading)
                         view?.showResponseSuccess(response)
                     }, { error ->
-                        view?.hideLoading()
+                        checkLoadingTypeHideState(showShimmerLoading)
                         view?.showError(error)
                     }
                 )
         )
+    }
+
+    private fun checkLoadingTypeHideState(showShimmerLoading: Boolean) {
+        if (showShimmerLoading) {
+            view?.hideLoadingShimmer()
+        } else {
+            view?.hideLoading()
+        }
+    }
+
+    private fun checkLoadingTypeShowState(showShimmerLoading: Boolean) {
+        if (showShimmerLoading) {
+            view?.showLoadingShimmer()
+        } else {
+            view?.showLoading()
+        }
     }
 }

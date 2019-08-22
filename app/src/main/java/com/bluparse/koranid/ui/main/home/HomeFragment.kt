@@ -6,28 +6,28 @@ import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
 import androidx.core.app.ActivityOptionsCompat.makeSceneTransitionAnimation
-import androidx.core.view.ViewCompat
-import androidx.fragment.app.FragmentActivity
+import androidx.core.view.ViewCompat.getTransitionName
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bluparse.core.base.BaseFragment
 import com.bluparse.core.utils.ConstantIntent
+import com.bluparse.core.utils.setGone
+import com.bluparse.core.utils.setVisible
 import com.bluparse.koranid.R
-import com.bluparse.core.R as core
 import com.bluparse.koranid.data.entity.ArticleHeadline
 import com.bluparse.koranid.data.entity.MenuCategory
 import com.bluparse.koranid.data.entity.TopHeadline
 import com.bluparse.koranid.ui.detail.DetailNewsActivity
 import com.bluparse.koranid.ui.main.CategoryAdapter
 import com.bluparse.koranid.ui.main.TopHeadlineAdapter
+import kotlinx.android.synthetic.main.base_loading_home_top_headline_shimmer.*
 import kotlinx.android.synthetic.main.cell_category.*
 import kotlinx.android.synthetic.main.cell_top_headline.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.row_item_headline.view.*
 import javax.inject.Inject
-import androidx.core.view.ViewCompat.getTransitionName
+import com.bluparse.core.R as core
 
 
 private const val CLASS_SPORT = "com.bluparse.features_sport.ui.list.SportActivity"
@@ -69,13 +69,13 @@ class HomeFragment : BaseFragment(), HomeContract.View, HomeAdapterListener {
         onActionListener()
         initRecyclerViewCategory()
         initRecyclerViewTopHeadline()
-        presenter.getTopHeadline("id", "")
+        presenter.getTopHeadline("id", "", true)
         generateMenuCategory()
     }
 
     private fun onActionListener() {
         swipe_refresh_layout.setOnRefreshListener {
-            presenter.getTopHeadline("id", "sports")
+            presenter.getTopHeadline("id", "sports", false)
             swipe_refresh_layout.isRefreshing = false
         }
     }
@@ -150,6 +150,16 @@ class HomeFragment : BaseFragment(), HomeContract.View, HomeAdapterListener {
 
     override fun hideLoading() {
         swipe_refresh_layout.isRefreshing = false
+    }
+
+    override fun showLoadingShimmer() {
+        shimmer_home.setVisible()
+        rv_headline.setGone()
+    }
+
+    override fun hideLoadingShimmer() {
+        shimmer_home.setGone()
+        rv_headline.setVisible()
     }
 
     override fun showError(throwable: Throwable) {

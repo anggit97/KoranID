@@ -26,6 +26,8 @@
 
                 <include layout="@layout/cell_top_headline" />
 
+                <include layout="@layout/base_loading_home_top_headline_shimmer"/>
+
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
