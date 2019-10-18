@@ -1,9 +1,9 @@
 package com.bluparse.koranid.ui.main.di
 
-import com.bluparse.koranid.ui.main.home.HomeFragment
+import com.bluparse.explore.ui.explore.ExploreFragment
 import com.bluparse.koranid.ui.main.di.home.HomeFragmentAdapterModule
 import com.bluparse.koranid.ui.main.di.home.HomeFragmentModule
-import com.bluparse.koranid.ui.main.explore.ExploreFragment
+import com.bluparse.koranid.ui.main.home.HomeFragment
 import com.bluparse.koranid.ui.main.profil.ProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

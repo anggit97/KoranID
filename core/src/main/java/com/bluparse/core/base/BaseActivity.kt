@@ -20,14 +20,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
-    protected fun getProcessScheduler(): Scheduler {
-        return Schedulers.io()
-    }
-
-    protected fun getAndroidScheduler(): Scheduler {
-        return AndroidSchedulers.mainThread()
-    }
-
     protected fun initStatusBarPref() {
         changeStatusBarColor(this, ContextCompat.getColor(this, R.color.colorWhite))
         changeStatusBarItemColor(this, false)

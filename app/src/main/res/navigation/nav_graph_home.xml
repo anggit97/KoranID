@@ -11,9 +11,8 @@
             android:label="@string/home_title" />
     <fragment
             android:id="@+id/explore_dest"
-            android:name="com.bluparse.koranid.ui.main.explore.ExploreFragment"
-            android:label="@string/browse_title"
-            tools:layout="@layout/fragment_explore" />
+            android:name="com.bluparse.explore.ui.explore.ExploreFragment"
+            android:label="@string/browse_title" />
     <fragment
             android:id="@+id/profile_dest"
             android:name="com.bluparse.koranid.ui.main.profil.ProfileFragment"

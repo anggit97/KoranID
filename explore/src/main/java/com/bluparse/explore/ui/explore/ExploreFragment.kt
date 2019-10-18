@@ -1,15 +1,11 @@
-package com.bluparse.koranid.ui.main.explore
+package com.bluparse.explore.ui.explore
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.anggit97.explore.R
 import com.bluparse.core.base.BaseFragment
-
-import com.bluparse.koranid.R
 
 
 class ExploreFragment : BaseFragment() {
