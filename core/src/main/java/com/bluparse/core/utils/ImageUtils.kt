@@ -24,6 +24,9 @@ fun ImageView.showImage(context: Context, imageSource: Any?) {
 fun ImageView.showImageRounded(context: Context, imageSource: Any?) {
     Glide.with(context)
         .load(imageSource)
-        .transform(CenterCrop(), RoundedCorners(16))
+        .apply(
+            RequestOptions()
+                .transform(CenterCrop(), RoundedCorners(16))
+        )
         .into(this)
 }
